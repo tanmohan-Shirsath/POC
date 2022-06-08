@@ -1,0 +1,128 @@
+<!-- <div class="page login-page">
+   <div class="container-fluid">
+    <div class="form-outer text-center d-flex align-items-center">
+      <div class="form-inner">
+        <div class="logo text-uppercase"><strong class="text-primary">MoneyMart</strong></div>
+        <form [formGroup]="loginForm" class="text-left form-validate" (ngSubmit)= "onsubmit(loginForm.value)">
+          <div class="form-group-material">
+            <input id="FirstName" type="text" name="FirstName" required data-msg="Please enter your FirstName" class="input-material" formControlName="firstname">
+            <label for="MiddleName" class="form-control-custom">FirstName</label>
+          </div>
+          <div class="form-group-material">
+            <input id="MiddleName" type="text" name="MiddleName" required data-msg="Please enter your MiddleName" class="input-material" formControlName="MiddleName">
+            <label for="MiddleName" class="form-control-custom">MiddleName</label>
+          </div>
+          <div class="form-group-material">
+            <input id="LastName" type="text" name="LastName" required data-msg="Please enter your LastName" class="input-material" formControlName="LastName">
+            <label for="LastName" class="form-control-custom">LastName</label>
+          </div>
+          <div class="form-group-material">
+            <input id="Email" type="email" name="Email" required data-msg="Please enter a valid Email" class="input-material" formControlName="Email">
+            <label for="Email" class="form-control-custom">Email</label>
+          </div>
+          <div class="form-group-material">
+            <input id="Password" type="text" name="Password" required data-msg="Please enter your Password" class="input-material"formControlName="Password">
+            <label for="Password" class="form-control-custom">Password</label>
+          </div>
+          <div class="form-group-material">
+            <input id="Address" type="text" name="Address" required data-msg="Please enter your address" class="input-material" formControlName="Address">
+            <label for="Address" class="form-control-custom"> Address</label>
+          </div>
+          <div class="form-group terms-conditions text-center">
+            <input id="register-agree" name="registerAgree" type="checkbox" required value="1" data-msg="Your agreement is required" class="form-control-custom">
+            <label for="register-agree">I agree with the terms and policy of the Organization. </label>
+          </div>
+          <div class="form-group text-center">
+            <input id="register" type="submit" value="Register" class="btn btn-primary">
+          </div>
+        </form><small>Already have an account? </small><a href="home.html" class="signup">Login</a>
+      </div>
+    </div>
+   </div>
+</div> -->
+<div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      class="profile-img-card"
+    />
+    <form
+      *ngIf="!isSuccessful"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          [(ngModel)]="form.username"
+          required
+          minlength="3"
+          maxlength="20"
+          #username="ngModel"
+        />
+        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.minlength">
+            Username must be at least 3 characters
+          </div>
+          <div *ngIf="username.errors.maxlength">
+            Username must be at most 20 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          #email="ngModel"
+        />
+        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">
+            Email must be a valid email address
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+        <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Sign Up</button>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+</div>

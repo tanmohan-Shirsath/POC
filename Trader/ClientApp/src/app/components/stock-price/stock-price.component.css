@@ -1,0 +1,10 @@
+.mat-header-cell {
+
+    font-weight: bold;
+    width: 100%;
+    padding: 0px 0px 0px 6px;
+}
+
+.mat-cell {
+    padding: 0px 0px 0px 10px;
+}

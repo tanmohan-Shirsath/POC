@@ -1,0 +1,67 @@
+<!-- Side Navbar -->
+<nav class="side-navbar">
+  <div class="side-navbar-wrapper">
+    <!-- Sidebar Header    -->
+    <div class="sidenav-header d-flex align-items-center justify-content-center">
+      <!-- User Info-->
+      <div class="sidenav-header-inner text-center"><!--<img src="src/assets/img/logo.png"  class="img-fluid rounded-circle">-->
+        <h2 class="h5">XYZ Trading Platform</h2><span>Learn-Play-Earn</span>
+      </div>
+      <!-- Small Brand information, appears on minimized sidebar-->
+      <div class="sidenav-header-logo"><a routerLink="index" class="brand-small text-center"><strong>V</strong><strong class="text-primary">T</strong></a></div>
+    </div>
+    <!-- Sidebar Navigation Menus-->
+    <div class="main-menu">
+      <h5 class="sidenav-heading" >Main</h5>
+      <ul id="side-main-menu" class="side-menu list-unstyled">
+        <li><a routerLink="home"> <i class="icon-home"></i>Home</a></li>
+        <li>
+          <a href="#learnSubMenu" aria-expanded="false" data-toggle="collapse"> <i class="icon-form"></i>Learn</a>
+          <ul id="learnSubMenu" class="collapse list-unstyled">
+            <li><a [routerLink]="['fundAnalysis']">Fundamental Analysis</a></li>
+            <li><a [routerLink]="['techAnalysis']">Technical Analysis</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#newsSubMenu" aria-expanded="false" data-toggle="collapse"> <i class="icon-ios-email-outline"></i>News</a>
+          <ul id="newsSubMenu" class="collapse list-unstyled">
+            <li><a [routerLink]="['nysenews']">NYSE News</a></li>
+            <!-- <li><a [routerLink]="['nasdaqnews']">NASDAQ News</a></li> -->
+          </ul>
+        </li>
+        <li>
+          <a href="#stockSubMenu" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Stock Price</a>
+          <ul id="stockSubMenu" class="collapse list-unstyled">
+            <li><a [routerLink]="['stockPrice']" [hidden]="!currentUser">NYSE Stock Price</a></li>
+            <!-- <li><a routerLink="#">NASDAQ Stock Price</a></li> -->
+          </ul>
+        </li>
+        <li>
+          <a href="#buySaleSubMenu" aria-expanded="false" data-toggle="collapse" [hidden]="!currentUser"> <i class="icon-bill"></i>Buy/Sell</a>
+          <ul id="buySaleSubMenu" class="collapse list-unstyled">
+            <li><a [routerLink]="['buySaleStock']" [hidden]="!currentUser">Buy Stock</a></li>
+            <!-- <li><a routerLink="#">Sale Stock</a></li> -->
+          </ul>
+        </li>
+        <!--Admin jobs-->
+        <li>
+          <!--<a href="#AdminMenu" aria-expanded="false" data-toggle="collapse" [hidden]="role==='Customer'" [hidden]="!currentUser"> <i class="icon-bill"></i>Admin-menu</a>-->
+          <ul id="AdminMenu" class="collapse list-unstyled">
+            <li><a [routerLink]="['addstock']" [hidden]="role==='Customer'" >Add-Stocks</a></li>
+            <!-- <li><a routerLink="#">Sale Stock</a></li> -->
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="admin-menu"> -->
+      <a href="#portfolioSubMenu" aria-expanded="false" data-toggle="collapse" [hidden]="!currentUser"> <i class="fa fa-folder"></i>My Porfolio</a>
+      <ul id="side-admin-menu" class="side-menu list-unstyled"> 
+        <li> <a [routerLink]="['myAsset']" [hidden]="!currentUser"> <i class="icon-screen"> </i>My Asset</a></li>
+        <li> <a [routerLink]="['orderHistory']" [hidden]="!currentUser"> <i class="icon-picture"> </i>Order History</a></li>
+      </ul>
+    </div>
+  <!-- </div> -->
+</nav>
+<!-- <div>
+  <router-outlet></router-outlet>
+</div> -->

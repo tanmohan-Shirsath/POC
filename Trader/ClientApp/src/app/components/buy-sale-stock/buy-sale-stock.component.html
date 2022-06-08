@@ -1,0 +1,70 @@
+<br>
+<br>
+<style>
+    section {
+        background-color: lightgrey;
+        width: 800px;
+        border: 5px solid green;
+        padding: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        align-content: center;
+    }
+    label{
+
+        font-weight: bold;
+    }
+</style>
+<h1 style="text-align: center;">Order Stocks</h1>
+<!--For Alter on Form Submission-->
+<div *ngIf="alter" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> Your Order is Completed.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<!-- <section class="container"> -->
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <section class="fluid d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <div class="col-sm-12 form-group">
+                        <label for="name">Stock Symbol</label>                        
+                        <select id="StockSymbol" class="form-control" formControlName="stockSymbol" [(ngModel)]="checkoutForm.StockSymbol"  (change)='onOptionsSelected($event)'>
+                            <option value="MSFT">Microsoft Corporation</option>
+                            <option value="AAPL">Apple Inc.</option>
+                            <option value="GOOG">Alphabet Inc</option>
+                            <option value="TSLA">Tesla Inc.</option>
+                            <option value="FB">Facebook Inc.</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="Transaction">Price</label>
+                        <input readonly type="text" id="Price" class="form-control" formControlName="price" [(ngModel)]="checkoutForm.price" value={{price}}>
+                    </div>
+                    
+                    <div class="col-sm-12 form-group">
+                        <label for="Transaction">Transaction</label>                        
+                        <select id="transaction" class="form-control" formControlName="transaction" [(ngModel)]="checkoutForm.transaction">
+                            <option value="Buy">Buy</option>
+                            <option value="Sell">Sell</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="Quantity">Quantity</label>
+                        <input type="text" id="Quantity" class="form-control" formControlName="quantity" [(ngModel)]="checkoutForm.quantity" required>
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="Total">Total</label>
+                        <input readonly type="text" id="Total" class="form-control" formControlName="total" value= {{checkoutForm.price*checkoutForm.quantity}} [(ngModel)]="checkoutForm.total" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-success" type="submit"  value="submit">Place Order</button>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</form>

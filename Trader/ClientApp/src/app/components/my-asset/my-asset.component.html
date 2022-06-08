@@ -1,0 +1,49 @@
+
+<section class="container">
+    <h1 style= "text-align: center;margin-top: 25px;">My Asset as on {{myDate|date}}</h1>
+<div>
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="stockSymbol">
+            <mat-header-cell *matHeaderCellDef>SYMBOL</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.stockSymbol }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="stockCompanyName">
+            <mat-header-cell *matHeaderCellDef>COMPANY NAME</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.stockCompanyName }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="remainingQuantity">
+            <mat-header-cell *matHeaderCellDef>QTY</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.remainingQuantity }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef>PURCHASE PRICE</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.price }}</mat-cell>
+        </ng-container>
+        <!-- <ng-container matColumnDef="CurrentPrice">
+            <mat-header-cell *matHeaderCellDef>CURRENTPRICE</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.price}}*{{PortFolio.quantity}}</mat-cell>
+        </ng-container> -->
+        <ng-container matColumnDef="total">
+            <mat-header-cell *matHeaderCellDef>TOTAL VALUE</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.total }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="accountValue">
+            <mat-header-cell *matHeaderCellDef>ACCOUNT VALUE</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio">{{PortFolio.accountValue }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="profitloss">
+            <mat-header-cell *matHeaderCellDef>PROFIT/LOSS</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio" >{{PortFolio.profitloss}} ({{PortFolio.profitloss/100 }}%)</mat-cell>            
+            <ng-container ng-class="PortFolio.profitloss > 0? 'glyphicon glyphicon-arrow-up' : 'glyphicon glyphicon-arrow-down'"></ng-container>
+            <!-- <ng-container *ngIf="PortFolio.profitloss > 0" class="glyphicon glyphicon-arrow-up">up</ng-container> -->
+        </ng-container>
+        <!-- <ng-container matColumnDef="profitloss">
+            <mat-header-cell *matHeaderCellDef>PROFIT/LOSS $</mat-header-cell>
+            <mat-cell *matCellDef="let PortFolio" >{{PortFolio.profitloss/100 }}%</mat-cell>
+            <ng-container ng-class="PortFolio.profitloss > 0? 'glyphicon glyphicon-arrow-up' : 'glyphicon glyphicon-arrow-down'"></ng-container>
+        </ng-container> -->
+        <mat-header-row *matHeaderRowDef ="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef= "let row; columns: displayedColumns" ></mat-row>
+    </mat-table>
+</div>
+</section>

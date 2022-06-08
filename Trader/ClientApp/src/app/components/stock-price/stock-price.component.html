@@ -1,0 +1,44 @@
+<section class="container">
+<h1 style= "text-align: center;margin-top: 25px;">Stock-Prices For {{myDate|date}}</h1>
+<br>
+<section class="container">
+<div>
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="CompanyName">
+            <mat-header-cell *matHeaderCellDef>COMPANY NAME</mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.stockCompanyName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="stockSymbol">
+            <mat-header-cell *matHeaderCellDef> SYMBOL</mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.stockSymbol}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Date">
+            <mat-header-cell *matHeaderCellDef> DATE </mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.date | date:'short'}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="openMarket">
+            <mat-header-cell *matHeaderCellDef> OPEN </mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.openMarket}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="highMarket">
+            <mat-header-cell *matHeaderCellDef>HIGH</mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.highMarket}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lowMarket">
+            <mat-header-cell *matHeaderCellDef>LOW</mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.lowMarket}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="closeMarket">
+            <mat-header-cell *matHeaderCellDef>CLOSE</mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.closeMarket}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="volumeOfMarket">
+            <mat-header-cell *matHeaderCellDef>TOTAL VOLUME</mat-header-cell>
+            <mat-cell *matCellDef="let StockPrice">{{StockPrice.volumeOfMarket}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef ="displayedstocks"></mat-header-row>
+        <mat-row *matRowDef= "let row; columns: displayedstocks"></mat-row>
+    </mat-table>
+</div>
+</section>
+</section>

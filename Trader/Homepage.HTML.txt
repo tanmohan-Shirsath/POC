@@ -1,0 +1,149 @@
+<!--Page Positioning-->
+<!--<div class= "row no-gutters"> One row for slpiting up page into right and left part -->
+ <div class="col-sm-12" > <!--*ngIf="currentUser; else loggedOut-->
+  <div class="leftside d-flex justify-content-center align-items-center">
+     <!--Copy of the Static Grid-->
+    <!-- <div class= "container-fluid"> -->
+      <div class= "row">
+      <section class="statistics">
+       <div class="container-fluid">
+         <div class="row d-flex">
+           <div class="col-lg-6">
+             <!-- Virtual Money-->
+             <div class="card income text-center">
+               <div class="icon"><i class="fa fa-dollar"></i></div>
+               <strong class="text-primary">Virtual Cash</strong>
+               <div>100,000</div>
+               <p>Treade, Risk Free with $100,000 in Virtual Cash </p>
+             </div>
+           </div>
+           <div class="col-lg-6">
+             <!-- Virtual Market-->
+             <div class="card income text-center">
+               <div class="icon"><i class="fa fa-line-chart"></i></div>
+               <strong class="text-primary"> Real Market</strong>
+               <div>Invest</div>
+               <p>A stepping stone to the virtual environment</p>
+             </div>
+           </div>
+           <!--New design-->
+           <div class="col-lg-6">
+           <!-- <div class="row"> -->
+            <section class="statistics">
+             <div class="container-fluid">
+               <div class="row d-flex">
+                   <!-- Connect-->
+                   <div class="card income text-center">
+                     <div class="icon"><i class= "fa fa-globe"></i></div>
+                     <strong class="text-primary">Connect</strong>
+                     <p>Interact with the other treaders from diverse background and exprience.</p>
+                   </div>
+                 </div>
+                 <div class="col-lg-6">
+                   <!-- Monthly Usage-->
+                   <div class="card income text-center">
+                    <div class="icon"><i class= "fa fa-laptop"></i></div>
+                    <strong class="text-primary">Test</strong>
+                     <p>Test your skills with Trading Challenges.  </p>
+                   </div>
+                 </div>
+          <!--  <div class="col-lg-6">
+             User Actibity
+             <div class="card user-activity">
+               <h2 class="display h4">User Activity</h2>
+               <div class="number">210</div>
+               <h3 class="h4 display">Social Users</h3>
+               <div class="progress">
+                 <div role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar bg-primary"></div>
+               </div>
+               <div class="page-statistics d-flex justify-content-between">
+                 <div class="page-statistics-left"><span>Pages Visits</span><strong>230</strong></div>
+                 <div class="page-statistics-right"><span>New Visits</span><strong>73.4%</strong></div>
+               </div>
+             </div>
+           </div>-->
+         </div>
+     </section>
+     </div>
+    </div>
+      
+     <!-- <hr/>  
+      statics grid-->
+      <!-- <div class="row">
+      <section class="statistics">
+       <div class="container-fluid">
+         <div class="row d-flex">
+           <div class="col-lg-6">
+             Connect
+             <div class="card income text-center">
+               <div class="icon"><i class= "fa fa-globe"></i></div>
+               <strong class="text-primary">Connect</strong>
+               <p>Interact with the other treaders from diverse background and exprience.</p>
+             </div>
+           </div>
+           <div class="col-lg-6">
+             Monthly Usage
+             <div class="card income text-center">
+              <div class="icon"><i class= "fa fa-laptop"></i></div>
+              <strong class="text-primary">Test</strong>
+               <p>Test your skills with Trading Challenges.  </p>
+             </div>
+           </div> 
+           <div class="col-lg-4">
+              User Actibity
+             <div class="card user-activity">
+               <h2 class="display h4">User Activity</h2>
+               <div class="number">210</div>
+               <h3 class="h4 display">Social Users</h3>
+               <div class="progress">
+                 <div role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar bg-primary"></div>
+               </div>
+               <div class="page-statistics d-flex justify-content-between">
+                 <div class="page-statistics-left"><span>Pages Visits</span><strong>230</strong></div>
+                 <div class="page-statistics-right"><span>New Visits</span><strong>73.4%</strong></div>
+               </div>
+             </div>
+           </div>-->
+         </div>
+       </div>
+     </section>
+     </div>
+  </div>
+ </div>
+
+
+
+<!--Right Side Column-->
+ <!-- <div class= "col-sm-6 no-gutters">  
+  <div class="rightside d-flex justify-content-center align-items-center">
+   <div class="container-fluid">
+    <div class="form-outer text-center d-flex align-items-center">
+      <div class="form-inner">
+        <div class="logo text-uppercase"><strong class="text-primary">moneyMart</strong></div>
+        <<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+        <form method="get" class="text-left form-validate">
+          <div class="form-group-material">
+            <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material">
+            <label for="login-username" class="label-material">Username</label>
+          </div>
+          <div class="form-group-material">
+            <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" class="input-material">
+            <label for="login-password" class="label-material">Password</label>
+          </div>
+          <div class="form-group text-center"><a id="login" href="index.html" class="btn btn-primary" >Login</a>
+            This should be submit button but I replaced it with <a> for demo purposes>
+          </div>
+        </form><a [routerLink]="['forgotPassword']" class="forgotPassword">Forgot Password?</a><small>Do not have an account? </small><a [routerLink]="['register']" class="signup">Signup</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div> --><!--Commenting for the revised page layout on 11.28.2020-->
+
+<!--Counts Section 
+<section class="dashboard-counts section-padding">
+  <div class="container- col-sm-6 border">
+    <div class="row">
+</div>
+</section>-->

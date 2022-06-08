@@ -1,0 +1,76 @@
+<br>
+<br>
+<style>
+    section {
+        background-color: lightgrey;
+        width: 800px;
+        border: 5px solid green;
+        padding: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        align-content: center;
+    }
+    label{
+
+        font-weight: bold;
+    }
+</style>
+<h1 style="text-align: center;">Add Stocks</h1>
+<!-- <section class="container"> -->
+<form [formGroup]="stockPriceForm" (ngSubmit)="onSubmit(stockPriceForm.value)">
+    <section class="fluid d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <div class="col-sm-12 form-group">
+                        <label for="name">Stock Symbol</label>
+                       <select id="stockSymbol" class="form-control" formControlName="stockSymbol" [(ngModel)]="stockPriceForm.stockSymbol">
+                            <option value="MSFT">Microsoft Corporation</option>
+                            <option value="AAPL">Apple Inc.</option>
+                            <option value="GOOG">Alphabet Inc</option>
+                            <option value="TSLA">Tesla Inc.</option>
+                            <option value="FB">Facebook Inc.</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="date">Date</label>
+                        <input type="text" id="date" class="form-control" formControlName="date" value= {{stockPriceForm.date}} [(ngModel)]="stockPriceForm.date" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="openMarket">OpenPrice</label>
+                        <input type="text" id="openMarket" class="form-control" formControlName="openMarket" value= {{stockPriceForm.openMarket}} [(ngModel)]="stockPriceForm.openMarket" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="highMarket">HighPrice</label>
+                        <input type="text" id="highMarket" class="form-control" formControlName="highMarket" value= {{stockPriceForm.highMarket}} [(ngModel)]="stockPriceForm.highMarket" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="lowMarket">LowPrice</label>
+                        <input type="text" id="lowMarket" class="form-control" formControlName="lowMarket" value= {{stockPriceForm.lowMarket}} [(ngModel)]="stockPriceForm.lowMarket" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="closeMarket">ClosePrice</label>
+                        <input type="text" id="closeMarket" class="form-control" formControlName="closeMarket" value= {{stockPriceForm.closeMarket}} [(ngModel)]="stockPriceForm.closeMarket" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <label for="volumeOfMarket">Volume</label>
+                        <input type="text" id="volumeOfMarket" class="form-control" formControlName="volumeOfMarket" value= {{stockPriceForm.volumeOfMarket}} [(ngModel)]="stockPriceForm.volumeOfMarket" >
+                    </div>
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-success" type="submit"  value="submit">Add Stock Price</button>
+                    </div>
+                    <div *ngIf="returnVal===true; else elseBlock" >
+                        <h4 class="text-success">
+                            Stock added successfully!
+                        </h4>
+                        <ng-template #elseBlock>  
+                            <h4 class="text-danger"> Error ! Stock can not add at this point.</h4>  
+                            </ng-template>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</form>
+<!-- </section> -->

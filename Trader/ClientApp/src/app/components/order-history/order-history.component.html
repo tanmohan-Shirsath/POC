@@ -1,0 +1,45 @@
+ <!-- <section class="container">
+    <h1 style= "text-align: center">Order-History on {{myDate|date}} For {{userid}}</h1>
+    <br>-->
+    <section class="container">
+        <h1 style= "text-align: center;margin-top: 25px;">Order-History</h1>
+    <div>
+        <mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="dateTime">
+                <mat-header-cell *matHeaderCellDef>ORDER DATE</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.dateTime | date}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="transactionType">
+                <mat-header-cell *matHeaderCellDef>TRADE TYPE</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.transactionType | buy}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="stockSymbol">
+                <mat-header-cell *matHeaderCellDef>SYMBOL</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.stockSymbol}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="quantity">
+                <mat-header-cell *matHeaderCellDef>QUANTITY</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.quantity}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <mat-header-cell *matHeaderCellDef>PRICE</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.price}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="commision">
+                <mat-header-cell *matHeaderCellDef>COMMISSION</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.commision}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="total">
+                <mat-header-cell *matHeaderCellDef>TOTAL VALUE</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.total}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="accountValue">
+                <mat-header-cell *matHeaderCellDef>ACCOUNT VALUE</mat-header-cell>
+                <mat-cell *matCellDef="let Orderhistory">{{Orderhistory.accountValue}}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef ="displayedOrderHistory"></mat-header-row>
+            <mat-row *matRowDef= "let row; columns: displayedOrderHistory"></mat-row>
+        </mat-table>
+    </div>
+    </section>
+   <!--</section>-->

@@ -1,0 +1,78 @@
+<hr>
+<section class="statistics">
+  <div class="container-fluid">
+    <div class="row d-flex">
+      <div class="col-lg-3">
+        <!-- What is Fundamental Analysis-->
+        <div class="card income text-center">
+         <img [src]="imgsrc" routerLink = "/whatisfund" class="img-thumbnail" height= "300px" width="300px"> 
+          <strong class= "text-success" routerLink = "/whatisfund">What is Fundamental Analysis</strong>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <!-- Calculating EBITDA-->
+        <div class="card income text-center">
+          <img [src]="editda" routerLink = "/cal-editda" class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success" routerLink = "/cal-editda">Calculate EBITDA</strong>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <!--Calculating Book Value per Common Share -->
+        <div class="card income text-center">
+          <img [src]="bvps" routerLink = "/bvcs" class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success" routerLink = "/bvcs">Book Value Per Common Share</strong>
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+      <div class="col-lg-3">
+        <!-- Three Factor Model-->
+        <div class="card income text-center">
+          <img [src]="tfm" routerLink = "/threefact-model" class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success" routerLink = "/threefact-model">Three Factor Model</strong>
+          <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- <p>fund-analysis works!</p> -->
+<hr/>
+<section class="statistics">
+  <div class="container-fluid">
+    <div class="row d-flex">
+      <div class="col-lg-3">
+        <!-- Metrics-->
+        <div class="card income text-center">
+          <img [src]="matrics" routerLink = "/metrics" class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success" routerLink = "/metrics">Fundamental of Metrics</strong>
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+      <div class="col-lg-3">
+        <!-- Market Value Definition-->
+        <div class="card income text-center">
+          <img [src]="marketValue"  routerLink = "/market-value-definition"  class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success"  routerLink = "/market-value-definition" >Market Value Definition</strong>
+          <router-outlet></router-outlet>
+      </div>
+      </div>
+      <div class="col-lg-3">
+        <!-- Economic Moat Definition-->
+        <div class="card income text-center">
+          <img [src]="EconomicMoat" routerLink = "/economic-def" class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success" routerLink = "/economic-def">Economic Moat Definition</strong>
+          <router-outlet></router-outlet>
+      </div>
+      </div>
+      <div class="col-lg-3">
+        <!-- Cash Flow-->
+        <div class="card income text-center">
+          <img [src]="cashflow" routerLink = "/cashflow" class="img-thumbnail" height= "300px" width="300px">
+          <strong class= "text-success" routerLink = "/cashflow">Price to Cash flow Definition</strong>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
